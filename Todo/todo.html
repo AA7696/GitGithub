@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      display: grid;
+      gap: 12px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      padding: 10px 15px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+    li {
+      background: #f9fafb;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 To-Do Page</h1>
+
+    <form id="todo-form">
+      <div>
+        <label for="name">Item Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter item name" required>
+      </div>
+      <div>
+        <label for="desc">Item Description:</label>
+        <textarea id="desc" name="desc" rows="3" placeholder="Enter item description"></textarea>
+      </div>
+      <button type="submit">Add Item</button>
+    </form>
+
+    <ul id="todo-list"></ul>
+  </div>
+
+  <script>
+    const form = document.getElementById("todo-form");
+    const list = document.getElementById("todo-list");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const desc = document.getElementById("desc").value.trim();
+      if (!name) return;
+
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${name}</strong><br><small>${desc}</small>`;
+      list.appendChild(li);
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
