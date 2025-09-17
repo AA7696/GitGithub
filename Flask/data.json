@@ -1,1 +1,20 @@
-{ "message": " updated data from Tutedude_new" }
+[
+    {
+        "id": 1,
+        "name": "Alice",
+        "email": "alice@example.com",
+        "age": 28
+    },
+    {
+        "id": 2,
+        "name": "Bob",
+        "email": "bob@example.com",
+        "age": 34
+    },
+    {
+        "id": 3,
+        "name": "Charlie",
+        "email": "charlie@example.com",
+        "age": 22
+    }
+]
